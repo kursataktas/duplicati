@@ -1,105 +1,107 @@
 # Duplicati
 
-[English](./README.md) | [中文](./README.zh-CN.md) | **日本語**
+**English** | [中文](./README.zh-CN.md) | [日本語](./README.ja-JP.md)
 
-暗号化したバックアップを、クラウドストレージサービスで安全に保管しましょう！
+Store securely encrypted backups on cloud storage services!
 
 <!---
-以下は現在機能していません…
+These are currently not working ...
 [![Issue Stats](http://www.issuestats.com/github/duplicati/duplicati/badge/pr)](http://www.issuestats.com/github/duplicati/duplicati/)
 [![Issue Stats](http://www.issuestats.com/github/duplicati/duplicati/badge/issue)](http://www.issuestats.com/github/duplicati/duplicati/)
 -->
 
 <!--
-Gitterは削除済
+Removed Gitter
 [![Join the chat at https://gitter.im/duplicati/Lobby](https://badges.gitter.im/duplicati/Lobby.svg)](https://gitter.im/duplicati/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 -->
 
-[![Open Collectiveでのサポーター](https://opencollective.com/duplicati/backers/badge.svg)](#backers) [![Open Collectiveでのスポンサー](https://opencollective.com/duplicati/sponsors/badge.svg)](#sponsors) [![Travis-CIでのビルドの状況](https://travis-ci.org/duplicati/duplicati.svg?branch=master)](https://travis-ci.org/duplicati/duplicati)
-[![カバレッジの状況](https://coveralls.io/repos/github/duplicati/duplicati/badge.svg?branch=HEAD)](https://coveralls.io/github/duplicati/duplicati?branch=HEAD)
-[![ライセンス](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/duplicati/duplicati/blob/master/LICENSE.txt)
+[![Backers on Open Collective](https://opencollective.com/duplicati/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/duplicati/sponsors/badge.svg)](#sponsors) [![Build Status on Travis-CI](https://travis-ci.org/duplicati/duplicati.svg?branch=master)](https://travis-ci.org/duplicati/duplicati)
+[![Coverage Status](https://coveralls.io/repos/github/duplicati/duplicati/badge.svg?branch=HEAD)](https://coveralls.io/github/duplicati/duplicati?branch=HEAD)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/duplicati/duplicati/blob/master/LICENSE.txt) [![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20Duplicati%20Guru-006BFF)](https://gurubase.io/g/duplicati)
 
 
-Duplicatiは、フリー（自由）でオープンソースのバックアップ用クライアントです。圧縮し、暗号化した増分バックアップを、クラウドストレージサービスや遠隔のファイルサーバー上に安全に保存できます。Duplicatiは、主に以下のサービスやソフトウェアで使うことができます。
+Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It works with:
 
-&nbsp;&nbsp; *Amazon S3、[IDrive e2](https://www.idrive.com/e2/duplicati "Using Duplicati with IDrive e2")、[Backblaze (B2)](https://www.backblaze.com/blog/duplicati-backups-cloud-storage/ "Duplicati with Backblaze B2 Cloud Storage")、Box、Dropbox、FTP、Googleクラウド、Googleドライブ、MEGA、Microsoft Azure、Microsoft OneDrive、Rackspace Cloud Files、OpenStack Storage (Swift)、Sia、Storj DCS、SSH (SFTP)、WebDAV、Tencentクラウドオブジェクトストレージ（COS）、Aliyun OSS、[その他にも対応しています！](https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends)*
+&nbsp;&nbsp; *Amazon S3, [IDrive e2](https://www.idrive.com/e2/duplicati "Using Duplicati with IDrive e2"), [Backblaze (B2)](https://www.backblaze.com/blog/duplicati-backups-cloud-storage/ "Duplicati with Backblaze B2 Cloud Storage"), Box, Dropbox, FTP, Google Cloud and Drive, MEGA, Microsoft Azure and OneDrive, Rackspace Cloud Files, OpenStack Storage (Swift), Sia, Storj DCS, SSH (SFTP), WebDAV, Tencent Cloud Object Storage (COS), Aliyun OSS, [and more!](https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends)*
 
-DuplicatiはMITライセンスで公開されており、Windows、OSX、Linuxで利用できます（.NET 4.7.1以上、またはMono 5.10.0以上が必要です）。
+Duplicati is licensed under the MIT license and available for Windows, OSX and Linux (.NET 4.7.1+ or Mono 5.10.0+ required).
 
-ダウンロード
+Download
 ========
 
-Duplicati 2.0のベータ版がDuplicatiの最新バージョンとなります。
+The latest version of Duplicati is a beta version for the Duplicati 2.0 release.
 
-[ここをクリックすると、Duplicati 2.0のベータ版をダウンロードできます。](https://duplicati.com/download)
+[Click here to download the latest Duplicati 2.0 beta release.](https://duplicati.com/download)
 
-ベータ版では、アップデートがある場合に自動的に通知を行い、1クリック（またはターミナルでのコマンド入力）でアップグレードできます。
-より新しい[テスト版に関しては、最新のリリースを確認](https://github.com/duplicati/duplicati/releases)するか、ソフトウェア上の画面またはコマンドラインで、別のアップデートチャンネルを選択してください。
+The beta release will automatically notify you of updates and allows you to upgrade with a single click (or command in the terminal).
+For even more [bleeding edge access, check the latest releases](https://github.com/duplicati/duplicati/releases) or choose another update channel in the UI or on the commandline.
 
-全てのリリースは、GPGで署名されます。署名に使われる公開鍵は[3DAC703D](https://keys.openpgp.org/search?q=0xC20E90473DAC703D)となります。最新の署名ファイル（バイナリー版とASCII版）については、[Duplicatiのダウンロード用ページ](https://github.com/duplicati/duplicati/releases)から入手できます。
+All releases are GPG signed with the public key [3DAC703D](https://keys.openpgp.org/search?q=0xC20E90473DAC703D). The latest signature file and latest ASCII signature file are also available from [the Duplicati download page](https://github.com/duplicati/duplicati/releases).
 
-サポート
+Support
 =======
 
-Duplicatiは、活発なコミュニティーによってサポートが行われています。コミュニティーには[フォーラム](https://forum.duplicati.com)からご参加ください。
+Duplicati is supported by an [active community and you can reach them via our forum](https://forum.duplicati.com).
 
-[Duplicatiのマニュアル](https://docs.duplicati.com)もあります。マニュアルの作成や維持にぜひ[ご参加](https://github.com/kees-z/DuplicatiDocs)ください。
+We have a great [Duplicati manual](https://docs.duplicati.com) that you can also [contribute to](https://github.com/kees-z/DuplicatiDocs).
 
-機能
+Features
 ========
 
-  * 全てのデータについて、アップロードする前にAES-256（またはGNU Privacy Guard）による暗号化を行い、データの安全性を確保します。
-  * 最初に全体のフルバックアップを行い、その後、小さな増分のバックアップを送信することにより、回線の帯域幅と保存領域の使用量を節約します。
-  * スケジュールの設定機能により、バックアップを最新のものに自動的に維持します。
-  * 新しいリリースが公開された際に、通知を行います。
-  * 暗号化したバックアップのファイルを、FTP、 Cloudfiles、WebDAV、SSH (SFTP)、Amazon S3などのサービスに送信します。
-  * フォルダー、ドキュメントや画像などファイルの種類、ユーザー定義のフィルターを指定して、バックアップを実行できます。
-  * 簡単に使える操作画面と、コマンドラインのツールを備えています。
-  * Windowsのボリュームシャドウコピーサービス（VSS）や、Linuxの論理ボリューム管理（LVM）によって、プログラムによって開かれているファイルや、ロックされているファイルを適切にバックアップできます。これにより、Microsoft Outlookを使っている際に、OutlookのPSTファイルをバックアップできます。
-  * フィルター、削除に関するルール、転送や帯域幅に関する設定などを行えます。
+  * Duplicati uses AES-256 encryption (or GNU Privacy Guard) to secure all data before it is uploaded.
+  * Duplicati uploads a full backup initially and stores smaller, incremental updates afterwards to save bandwidth and storage space.
+  * A scheduler keeps backups up-to-date automatically.
+  * Integrated updater notifies you when a new release is out
+  * Encrypted backup files are transferred to targets like FTP, Cloudfiles, WebDAV, SSH (SFTP), Amazon S3 and others.
+  * Duplicati allows backups of folders, document types like e.g. documents or images, or custom filter rules.
+  * Duplicati is available as application with an easy-to-use user interface and as command line tool.
+  * Duplicati can make proper backups of opened or locked files using the Volume Snapshot Service (VSS) under Windows or the Logical Volume Manager (LVM) under Linux. This allows Duplicati to back up the Microsoft Outlook PST file while Outlook is running.
+  * Filters, deletion rules, transfer and bandwidth options, etc
 
-Duplicatiの利点
+Why use Duplicati?
 ==================
 
-データを安全に保つこと。離れたところに保管すること。バックアップを定期的に更新すること。
-とてもシンプルなルールですが、今日の多くのバックアップ用サービスやソフトウェアは、これを達成していません。
-一方、Duplicatiでは、このルールを実践しています！
+Keep your data safe, store it far away, update your backup regularly!
+This is a simple rule but many backup solutions do not achieve that today.
+But Duplicati does!
 
-データを安全に保ちましょう！　悪意をもったインターネット上の人々は、興味を引くデータをあらゆるところで探し回っているようです。しかしユーザーは、自らのプライベートなデータが第三者に暴かれてもよいとは誰も思っていません。Duplicatiでは、強力な暗号を使うことで、あなたのデータが、自分以外には全く意味不明なものになっていることを保証します。よく検討されたパスワードを使うと、あなたのバックアップファイルは、公開されているウェブサーバー上に保管されている場合でも、あなたの自宅にあり、しかし暗号化されずに保管されているファイルと比べて、より安全なものとなります。
+Keep your data safe! Bad guys on the Internet seem to look for interesting data everywhere. But people do not want to see any of their private data revealed anywhere. Duplicati provides strong encryption to make sure that your data looks like garbage to others. With a well chosen password your backup files will be more safe on a public webserver than your unencrypted files at home.
 
-バックアップは、離れたところに保管しましょう！　たとえバックアップが完璧だったとしても、それがバックアップ元のデータもろとも失われてしまっては何の意味もありません。職場で火事があった場合を想像してみてください。… バックアップは火事にも負けず生き残りますか？　Duplicatiはバックアップを多様な遠隔のファイルサーバーに保存し、データの更新が必要な部分だけが転送されるよう、増分バックアップをサポートしています。これによって、バックアップ元のデータから遠く離れたところにバックアップを保管しやすくなっています。
+Store your backup far away! The best backup is useless when it is destroyed together with its original data. Just assume that a fire destroys your office - would your backup survive? Duplicati stores backups on various remote file servers and it supports incremental backups so that only changed parts need to be transferred. This makes it easy to use a destination far away from the original data.
 
-定期的にバックアップを行いましょう！　最悪のケースは、しかるべきときにバックアップを行うことをうっかり忘れていたために、バックアップが古くなってしまっていることです。Duplicatiにはスケジュールの設定機能が備わっているので、簡単に、最新の状態のバックアップを定期的に作成できます。また、Duplicatiはファイルの圧縮を実行し、増分バックアップを行えるため、保存領域と帯域幅を節約できます。
+Backup regularly! The worst case is that your backup is outdated simply because someone forgot to make a backup at the right time. Duplicati has a built-in scheduler, so that it's easy to have a regular, up-to-date backup. Furthermore, Duplicati uses file compression and is able to store incremental backups to save storage space and bandwidth.
 
-開発に参加
+Contributing
 ==================
 
-## 不具合を報告
-バグの管理にはGitHubを使っています。不具合を発見した場合は https://github.com/duplicati/duplicati/issues で既存のIssueがないか検索して、もしまだ報告されていないようであれば、新しいIssueを作成してください。
+## Contributing Bug reports
+We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked:
+https://github.com/duplicati/duplicati/issues
 
-## 翻訳に参加
-Duplicatiの翻訳に興味がある場合は、[Transifex](https://www.transifex.com/duplicati/duplicati/dashboard/)で翻訳作業にご参加ください。
+## Contributing Translations
+Interested in helping to translate duplicati? Help is always welcome at transifex:
+https://www.transifex.com/duplicati/duplicati/dashboard/
 
-## 開発作業に参加
-開発環境を設定してDuplicatiをビルドする方法については、[ウィキ](https://github.com/duplicati/duplicati/wiki/How-to-build-from-source)をご覧ください。不具合を修正したり、Duplicatiを改善したりするプルリクエストについては、いつでも歓迎します。
+## Contributing Code
+Instructions on how to setup your development environment and build duplicati can be found in the [wiki](https://github.com/duplicati/duplicati/wiki/How-to-build-from-source). Pull requests fixing bugs or improving duplicati in another way are appreciated.
 
-修正すべき問題を探している場合は、[minor change](https://github.com/duplicati/duplicati/issues?q=is%3Aissue+is%3Aopen+label%3A%22minor+change%22)のIssueを確認してみてください。ウェブUIの開発に慣れている場合は、 [「UI」でタグ付けされたIssue](https://github.com/duplicati/duplicati/issues?q=is%3Aissue+is%3Aopen+label%3A%22UI%22)を見てみてください。
+If you are looking for an issue to fix, try looking at one of the [minor change](https://github.com/duplicati/duplicati/issues?q=is%3Aissue+is%3Aopen+label%3A%22minor+change%22) issues. If you are most used to web development, have a look at the [issues marked UI](https://github.com/duplicati/duplicati/issues?q=is%3Aissue+is%3Aopen+label%3A%22UI%22).
 
 
-貢献していただいた皆様に感謝いたします！
+Thank you to all our existing contributors:
 <a href="https://github.com/duplicati/duplicati/graphs/contributors"><img src="https://opencollective.com/duplicati/contributors.svg?width=890" /></a>
 
 
-## 後援
+## Backers
 
-後援いただいている皆様に感謝いたします！🙏
+Thank you to all our backers! 🙏
 
 <a href="https://opencollective.com/duplicati#backers" target="_blank"><img src="https://opencollective.com/duplicati/backers.svg?width=890"></a>
 
 
-## スポンサー
+## Sponsors
 
-以下に、Duplicatiに寄付していただいたスポンサーを一覧でご紹介します。
+The list below reflects the sponsors who donated to the open-source project.
 
 <a href="https://opencollective.com/duplicati/sponsor/0/website" target="_blank"><img src="https://opencollective.com/duplicati/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/duplicati/sponsor/1/website" target="_blank"><img src="https://opencollective.com/duplicati/sponsor/1/avatar.svg"></a>
